@@ -69,4 +69,9 @@ public class UserApiController {
         userService.deleteById(id);
         System.out.println("Task deleted successfully");
     }
+
+    @GetMapping(value = "/moveForward/{id}")
+    public String moveForward(@PathVariable(value = "id") Integer id) {
+        return userService.moveForward(id);
+    }
 }
