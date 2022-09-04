@@ -49,4 +49,9 @@ public class UserApiController {
     public Task getTask(@PathVariable(value = "id") int id) {
         return userService.getTaskById(id);
     }
+
+    @PostMapping(value = "/updateTask/{id}")
+    public Task editTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "id") Integer id) {
+        return userService.updateTitleAndDescription(taskDTO, id);
+    }
 }
