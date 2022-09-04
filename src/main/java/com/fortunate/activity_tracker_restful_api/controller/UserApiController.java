@@ -26,5 +26,10 @@ public class UserApiController {
         return userService.register(userDTO);
     }
 
+    @PostMapping("/login")
+    public User userLogin(@RequestBody UserDTO userDTO) {
+        return userService.userLogin(userDTO);
+    }
+
 
 }
