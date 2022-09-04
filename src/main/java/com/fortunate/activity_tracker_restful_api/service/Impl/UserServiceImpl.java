@@ -134,9 +134,11 @@ public class UserServiceImpl implements UserService {
         taskRepository.save(task);
         return "Task status moved backward to " + task.getStatus();
     }
+
+    @Override
+    public List<Task> findAllByUser_idAndStatus(int user_id , String status){
+        return taskRepository.findAllByUser_idAndStatus(user_id , status);
+    }
 }
 
-//    @Override
-//    public List<Task> findAllByUser_idAndStatus(int user_id , String status){
-//        return taskRepository.findAllByUser_idAndStatus(user_id , status);
-//    }
+

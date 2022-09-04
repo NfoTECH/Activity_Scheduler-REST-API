@@ -89,5 +89,10 @@ public class UserApiController {
     public List<Task> showTaskByUser(@PathVariable(value = "id") Integer id) {
         return userService.showTaskByUser(id);
     }
-    
+
+    // Endpoint to get all tasks by user id and status (All task in progress, completed, etc. for a particular user)
+    @GetMapping(value = "/showTaskByUserAndStatus/{id}/{status}")
+    public List<Task> showTaskByUserAndStatus(@PathVariable(value = "id") Integer id, @PathVariable(value = "status") String status) {
+        return userService.findAllByUser_idAndStatus(id, status);
+    }
 }
