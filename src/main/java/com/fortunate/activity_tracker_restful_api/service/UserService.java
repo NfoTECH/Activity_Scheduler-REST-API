@@ -27,6 +27,8 @@ public interface UserService {
 
     User userLogin(UserDTO userDTO);
 
+    User loginUser(String email, String password);
+
 
 //    List<Task> findAllByUser_idAndStatus(int user_id , String status);
 }

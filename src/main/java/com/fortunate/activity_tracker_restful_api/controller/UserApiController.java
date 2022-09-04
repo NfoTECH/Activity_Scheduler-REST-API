@@ -28,9 +28,18 @@ public class UserApiController {
         return registeredUser;
     }
 
+    // @RequestBody works with JSON data
     @GetMapping(value="/login")
     public User userLogin(@RequestBody UserDTO userDTO){
         User loggedInUser = userService.userLogin(userDTO);
+        System.out.println("User logged in successfully");
+        return loggedInUser;
+    }
+
+    //@RequestParam works with form data
+    @GetMapping(value = "/login2")
+    public User loginUser(@RequestParam String email, @RequestParam String password){
+        User loggedInUser = userService.loginUser(email, password);
         System.out.println("User logged in successfully");
         return loggedInUser;
     }
