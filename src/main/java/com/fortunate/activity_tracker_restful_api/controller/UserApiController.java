@@ -80,5 +80,8 @@ public class UserApiController {
         return userService.moveBackward(id);
     }
 
-
+     @GetMapping(value = "/getUser/{id}")
+    public User getUser(@PathVariable(value = "id") Integer id) {
+         return userService.getUserById(id);
+    }
 }
