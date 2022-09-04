@@ -84,4 +84,10 @@ public class UserApiController {
     public User getUser(@PathVariable(value = "id") Integer id) {
          return userService.getUserById(id);
     }
+
+    @GetMapping(value = "/showTaskByUser/{id}")
+    public List<Task> showTaskByUser(@PathVariable(value = "id") Integer id) {
+        return userService.showTaskByUser(id);
+    }
+    
 }
