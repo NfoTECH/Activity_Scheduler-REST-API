@@ -35,5 +35,10 @@ public class UserApiController {
         return loggedInUser;
     }
 
+    @PostMapping(value = "/createTask")
+    public Task createTask(@RequestBody TaskDTO taskDTO) {
+        return userService.createTask(taskDTO);
+    }
+
 
 }
