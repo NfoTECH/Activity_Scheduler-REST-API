@@ -14,4 +14,17 @@ import java.util.List;
 @RequestMapping("/api/v1/user")
 public class UserApiController {
 
+    private final UserServiceImpl userService;
+
+    @Autowired
+    public UserApiController(UserServiceImpl userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/register")
+    public User register(@RequestBody UserDTO userDTO) {
+        return userService.register(userDTO);
+    }
+
+
 }
