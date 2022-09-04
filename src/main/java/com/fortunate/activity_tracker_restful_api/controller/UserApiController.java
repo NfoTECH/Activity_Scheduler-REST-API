@@ -40,5 +40,13 @@ public class UserApiController {
         return userService.createTask(taskDTO);
     }
 
+    @GetMapping(value="/viewAllTasks")
+    public List<Task> getAllTasks() {
+        return userService.viewAllTasks();
+    }
 
+    @GetMapping(value = "/getTask/{id}")
+    public Task getTask(@PathVariable(value = "id") int id) {
+        return userService.getTaskById(id);
+    }
 }
