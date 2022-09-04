@@ -74,4 +74,11 @@ public class UserApiController {
     public String moveForward(@PathVariable(value = "id") Integer id) {
         return userService.moveForward(id);
     }
+
+    @GetMapping(value = "/moveBackward/{id}")
+    public String moveBackward(@PathVariable(value = "id") Integer id) {
+        return userService.moveBackward(id);
+    }
+
+
 }
