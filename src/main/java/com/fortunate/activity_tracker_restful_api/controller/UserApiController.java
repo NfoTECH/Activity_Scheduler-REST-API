@@ -46,12 +46,18 @@ public class UserApiController {
     }
 
     @GetMapping(value = "/getTask/{id}")
-    public Task getTask(@PathVariable(value = "id") int id) {
+    public Task getTask(@PathVariable(value = "id") Integer id) {
         return userService.getTaskById(id);
     }
 
     @PostMapping(value = "/updateTask/{id}")
     public Task editTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "id") Integer id) {
         return userService.updateTitleAndDescription(taskDTO, id);
+    }
+
+    @GetMapping(value = "/deleteTask/{id}")
+    public void deleteTask(@PathVariable(value = "id") Integer id) {
+        userService.deleteById(id);
+        System.out.println("Task deleted successfully");
     }
 }
