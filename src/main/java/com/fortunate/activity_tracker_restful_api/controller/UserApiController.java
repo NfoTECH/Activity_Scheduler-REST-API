@@ -21,14 +21,18 @@ public class UserApiController {
         this.userService = userService;
     }
 
-    @PostMapping("/register")
-    public User register(@RequestBody UserDTO userDTO) {
-        return userService.register(userDTO);
+    @PostMapping(value="/register")
+    public User registration(@RequestBody UserDTO userDTO){
+        User registeredUser = userService.register(userDTO);
+        System.out.println("User registered successfully");
+        return registeredUser;
     }
 
-    @PostMapping("/login")
-    public User userLogin(@RequestBody UserDTO userDTO) {
-        return userService.userLogin(userDTO);
+    @GetMapping(value="/login")
+    public User userLogin(@RequestBody UserDTO userDTO){
+        User loggedInUser = userService.userLogin(userDTO);
+        System.out.println("User logged in successfully");
+        return loggedInUser;
     }
 
 
