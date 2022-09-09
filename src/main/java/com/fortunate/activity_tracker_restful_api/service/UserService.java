@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserService {
     User register(UserDTO userDTO);
     User getUserByEmail(String email);
-    Task createTask(TaskDTO taskDTO);
+    Task createTask(TaskDTO taskDTO, int user_id);
     Task updateTitleAndDescription(TaskDTO taskDTO, int id);
     boolean updateTaskStatus(String status, int id);
     List<Task> viewAllTasks();

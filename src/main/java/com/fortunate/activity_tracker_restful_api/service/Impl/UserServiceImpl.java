@@ -63,11 +63,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public Task createTask(TaskDTO taskDTO) {
+    public Task createTask(TaskDTO taskDTO, int user_id) {
         Task task =  new Task();
         task.setTitle(taskDTO.getTitle());
         task.setDescription(taskDTO.getDescription());
         task.setStatus("PENDING");
+        task.setUser(getUserById(user_id));
         return taskRepository.save(task);
     }
 

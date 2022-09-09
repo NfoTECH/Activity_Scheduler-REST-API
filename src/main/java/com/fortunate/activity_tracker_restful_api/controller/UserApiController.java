@@ -44,9 +44,9 @@ public class UserApiController {
         return loggedInUser;
     }
 
-    @PostMapping(value = "/createTask")
-    public Task createTask(@RequestBody TaskDTO taskDTO) {
-        return userService.createTask(taskDTO);
+    @PostMapping(value = "/createTask/{user_id}")
+    public Task createTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "user_id") Integer user_id){
+        return userService.createTask(taskDTO, user_id);
     }
 
     @GetMapping(value="/viewAllTasks")
